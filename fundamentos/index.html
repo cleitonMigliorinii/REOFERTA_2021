@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Sorteador</title>
+
+        <link href="styles.css" rel="stylesheet"/> 
+        <script src="scripts.js"></script>
+    
+    </head>
+
+    <body>
+
+        <!--Section, article, aside, header, footer, nav -->
+        <!-- == div-->
+        <!-- Cria a caixa de fora-->
+        <section id="main">
+
+            <header>
+
+                    <h1>Sorteador</h1>
+
+                    <article>
+
+                        <form>
+
+                            <div id="InputGroup1" class="inputGroup">
+                                <label>Gerar quantos numeros</label><br>
+                                <input id="qtdeNumerosGerar" type="number" >
+                            </div>
+                            <div id="InputGroup2" class="inputGroup">
+                                <label>Sortear Quantos</label><br>
+                                <input id="qtdeSortear" type="number"/>
+                            </div>
+                            <div id="ButtonGroup">
+                                <button type="button" onclick="gerarValores()">GERAR</button>
+                            </div>
+
+                        </form>
+
+                    </article>
+
+            </header>
+            
+            <article>
+
+                <h1>Tabela de Resultados</h1>
+
+                <section id="conteudoSorteio">
+
+                </section>
+
+                <footer>
+                    <button type="button" onclick="sortear()"> SORTEAR </button>
+                </footer>
+
+            </article>
+
+        </section>
+
+
+
+    </body>
+
+</html>
