@@ -1,3 +1,6 @@
+var controleTamanho = 0;
+var listaSorteado = [];
+
 function gerarValores(){
 
     const qtdeValores = document.getElementById('qtdeNumerosGerar').value;
@@ -42,9 +45,29 @@ function sortear(){
     const qtdeValores = document.getElementById('qtdeNumerosGerar').value;
     const qtdeSorteio = document.getElementById('qtdeSortear').value;
 
-    const valorSorteado = Math.floor(Math.random() * qtdeValores);
+    if(qtdeSorteio > controleTamanho){
+        var valorSorteado = -1;
 
-    let elementoSorteado = document.getElementById(valorSorteado);
-    elementoSorteado.classList.add("sorteado");
+        do{
+            valorSorteado = Math.floor(Math.random() * qtdeValores);
+           
+            console.log("Valor sorteado " + valorSorteado)
+            console.log("Tamanho " +controleTamanho);
+            console.log("Verificar " + listaSorteado.indexOf(valorSorteado));
+            console.log("Lista "  + listaSorteado);
+
+        } while( valorSorteado == 0 || listaSorteado.indexOf(valorSorteado) >= 0 );
+
+        console.log("Saiu "  + valorSorteado);
+
+        let elementoSorteado = document.getElementById(valorSorteado);
+        elementoSorteado.classList.add("sorteado");
+        
+        listaSorteado.push(valorSorteado);
+        controleTamanho++;
+
+    }else{
+        alert("Você sorteou todos os numeros solicitados");
+    }
 
 }
